@@ -25,7 +25,7 @@
 </div>
 
 <div id="registerForm">
-	<form action="" method="post">
+	<form action="/registration" method="post">
 	
 		<label for="email">Email:</label>
 	    <input type="text" id="email" name="email"><br><br>
