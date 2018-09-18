@@ -4,7 +4,7 @@ public class User {
 
 	private int userId;
     private String email;
-    private String passwrod;
+    private String password;
     private String lName;
     private String fName;
     private String streetAdress;
@@ -26,11 +26,11 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPasswrod() {
-		return passwrod;
+	public String getPassword() {
+		return password;
 	}
-	public void setPasswrod(String passwrod) {
-		this.passwrod = passwrod;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getlName() {
 		return lName;

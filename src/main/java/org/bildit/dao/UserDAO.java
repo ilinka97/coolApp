@@ -2,6 +2,7 @@ package org.bildit.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.bildit.model.User;
@@ -17,7 +18,7 @@ public class UserDAO {
 		try  {
 			statement=connection.prepareStatement(query);
 			statement.setString(1, user.getEmail());
-			statement.setString(2, user.getPasswrod());
+			statement.setString(2, user.getPassword());
 
 			if(statement.executeUpdate() == 1) {
 				return true;
@@ -29,5 +30,35 @@ public class UserDAO {
 		}
 		return false;
 	}
+	
+	public User getUserByEmail(String email) {
+		
+		String query = "Select * from user where email=?";
+		ResultSet rs = null;
+		User user = new User();
+		PreparedStatement statement=null;
+		
+		try {
+			statement=connection.prepareStatement(query);
+			statement.setString(1, email);
+			rs = statement.executeQuery();
+
+			if (rs.next()) {
+
+				user.setUserId(rs.getInt("userid"));
+				user.setEmail(rs.getString("email"));
+				user.setPassword(rs.getString("password"));
+				rs.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return null;
+		}
+		return user;
+
+	}
+
+	
+	
 	
 }

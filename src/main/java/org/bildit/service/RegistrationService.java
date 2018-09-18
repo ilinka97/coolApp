@@ -17,7 +17,7 @@ public class RegistrationService {
        
             User user = new User();
             user.setEmail(email);
-            user.setPasswrod(password);
+            user.setPassword(password);
 
             if (addUser(user)) {
                 return true;
