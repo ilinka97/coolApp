@@ -16,6 +16,12 @@
 </div>
 
 <div id="content">
+
+	<h1>${user.getfName()} ${user.getlName()}</h1>
+	<h3>${user.getEmail()}</h3>
+	<h3>${user.getStreetAdress()}</h3>
+	<h3>${user.getCity()}</h3>
+	
 </div>
 
 </body>
