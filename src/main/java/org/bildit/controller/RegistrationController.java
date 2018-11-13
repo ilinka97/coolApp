@@ -28,7 +28,7 @@ public class RegistrationController extends HttpServlet {
 		
 		RegistrationService registrationService = new RegistrationService();
 		if (registrationService.registerUser(email,password)) {
-			request.getRequestDispatcher("OneMoreStep.jsp").forward(request,response);
+			request.getRequestDispatcher("oneMoreStep.jsp").forward(request,response);
 		}
 		else {
             request.getRequestDispatcher("index.jsp").forward(request,response);
