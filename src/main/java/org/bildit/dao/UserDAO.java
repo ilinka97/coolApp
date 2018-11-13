@@ -58,7 +58,29 @@ public class UserDAO {
 
 	}
 
-	
-	
+	public boolean updateUser(User user) {
+		
+		String query="UPDATE user SET lname=?, fname=?, streetadress=?, city=? WHERE userid=? ";
+		
+		try(PreparedStatement statement=connection.prepareStatement(query)){
+			
+			statement.setString(1, user.getlName());
+			statement.setString(2, user.getfName());
+			statement.setString(3, user.getStreetAdress());
+			statement.setString(4, user.getCity());
+			statement.setInt(5, user.getUserId());
+			
+			if (statement.executeUpdate()==1) {
+				return true;
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		
+		return false;
+
+	}
 	
 }

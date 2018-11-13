@@ -15,7 +15,7 @@ public class InsertMoreInfoService {
 		user.getUserId();
 		
 		UserDAO userDAO=new UserDAO();
-		return userDAO.insertMoreInfo(user);
+		return userDAO.updateUser(user);
 		
 	}
 	
