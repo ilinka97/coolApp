@@ -10,7 +10,7 @@
 <body>
 
 <div id="moreForm">
-	<form action="" method="post">
+	<form action="/moreInfo" method="post">
 	
 		<label for="fName">Name:</label>
 	    <input type="text" id="fName" name="fName"><br><br>

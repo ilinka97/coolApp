@@ -16,6 +16,12 @@
   	<description></description>
   	<servlet-class>org.bildit.controller.LoginController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>MoreInfo</servlet-name>
+  	<display-name>MoreInfo</display-name>
+  	<description></description>
+  	<servlet-class>org.bildit.controller.MoreInfo</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>RegistrationController</servlet-name>
   	<url-pattern>/RegistrationController</url-pattern>
@@ -23,5 +29,9 @@
   <servlet-mapping>
   	<servlet-name>LoginController</servlet-name>
   	<url-pattern>/LoginController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MoreInfo</servlet-name>
+  	<url-pattern>/MoreInfo</url-pattern>
   </servlet-mapping>
 </web-app>
