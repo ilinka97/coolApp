@@ -5,21 +5,22 @@ import org.bildit.model.User;
 
 public class InsertMoreInfoService {
 
-	public boolean insertMoreInfo(int userId, String fName, String lName, String streetAdr, String city) {
+	public boolean insertMoreInfo(User user) {
 		
-		User user=new User();
-		user.setfName(fName);
-		user.setlName(lName);
-		user.setStreetAdress(streetAdr);
-		user.setCity(city);
-		user.getUserId();
+		User userUpdate=new User();
+		userUpdate.setfName(user.getfName());
+		userUpdate.setlName(user.getlName());
+		userUpdate.setStreetAdress(user.getStreetAdress());
+		userUpdate.setCity(user.getCity());
+		userUpdate.setEmail(user.getEmail());
+		userUpdate.setPassword(user.getPassword());
 		
 		UserDAO userDAO=new UserDAO();
-		return userDAO.updateUser(user);
+		if(userDAO.updateUser(userUpdate)) {
+			return true;
+		}
 		
-	}
-	
-	
-	
+		return false;
+	}	
 	
 }

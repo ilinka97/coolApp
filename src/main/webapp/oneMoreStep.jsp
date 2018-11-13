@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div id="moreForm">
+<div id="/moreInfo">
 	<form action="/moreInfo" method="post">
 	
 		<label for="fName">Name:</label>

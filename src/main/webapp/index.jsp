@@ -14,10 +14,10 @@
 	<form action="/login" method="post">
 	
 		<label for="email">Email:</label>
-	    <input type="text" id="email" name="email"><br><br>
+	    <input type="text" id="email" name="email" required="required"><br><br>
 	    
 	    <label for="password">Password:</label>
-	    <input type="password" id="password" name="password"><br><br>
+	    <input type="password" id="password" name="password" required="required"><br><br>
 	    
 	    <input type="submit" value="Log in"/>
 	    
@@ -28,10 +28,10 @@
 	<form action="/registration" method="post">
 	
 		<label for="email">Email:</label>
-	    <input type="text" id="email" name="email"><br><br>
+	    <input type="text" id="email" name="email" required="required"><br><br>
 	    
 	    <label for="password">Password:</label>
-	    <input type="password" id="password" name="password"><br><br>
+	    <input type="password" id="password" name="password" required="required"><br><br>
 	    
 	    <input type="submit" value="Register"/>
 	    

@@ -4,9 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import org.bildit.model.User;
-
 
 public class UserDAO {
 
@@ -60,7 +58,7 @@ public class UserDAO {
 
 	public boolean updateUser(User user) {
 		
-		String query="UPDATE user SET lname=?, fname=?, streetadress=?, city=? WHERE userid=? ";
+		String query="UPDATE user SET lname=?, fname=?, streetadress=?, city=? WHERE email=? AND password=? ";
 		
 		try(PreparedStatement statement=connection.prepareStatement(query)){
 			
@@ -68,7 +66,8 @@ public class UserDAO {
 			statement.setString(2, user.getfName());
 			statement.setString(3, user.getStreetAdress());
 			statement.setString(4, user.getCity());
-			statement.setInt(5, user.getUserId());
+			statement.setString(5, user.getEmail());
+			statement.setString(6, user.getPassword());
 			
 			if (statement.executeUpdate()==1) {
 				return true;

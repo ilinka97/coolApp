@@ -33,15 +33,11 @@ public class LoginController extends HttpServlet {
 		if((user = loginService.login(user)) != null) {
 			HttpSession session=request.getSession();
 			session.setAttribute("user", user);
-			response.sendRedirect("home.jsp");
-			
+			request.getRequestDispatcher("home.jsp").forward(request, response);;	
 		}else {
             response.sendRedirect("/");
         }
-		
-		
-		
-		
+	
 	}
 
 }

@@ -6,7 +6,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import org.bildit.model.User;
 import org.bildit.service.RegistrationService;
 
 
@@ -20,18 +22,21 @@ public class RegistrationController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    	String email,password;
 		
-    	email=request.getParameter("email");
-		password=request.getParameter("password");
+    	String email=request.getParameter("email");
+    	String password=request.getParameter("password");
 		
+    	User user=new User();
+    	user.setEmail(email);
+    	user.setPassword(password);
+    	
 		RegistrationService registrationService = new RegistrationService();
 		if (registrationService.registerUser(email,password)) {
+			HttpSession session=request.getSession();
+			session.setAttribute("user", user);
 			request.getRequestDispatcher("oneMoreStep.jsp").forward(request,response);
-		}
-		else {
-            request.getRequestDispatcher("index.jsp").forward(request,response);
+		}else {
+            request.getRequestDispatcher("/").forward(request,response);
         }
 		
 	}

@@ -16,7 +16,7 @@ public class InsertMoreInfoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("OneMoreStep.jsp").forward(request,response);
+		request.getRequestDispatcher("oneMoreStep.jsp").forward(request,response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,15 +25,21 @@ public class InsertMoreInfoController extends HttpServlet {
 		String lName=request.getParameter("lName");
 		String streetAdr=request.getParameter("streetAdr");
 		String city=request.getParameter("city");
+		
 		HttpSession session=request.getSession();
 		User user=(User) session.getAttribute("user");
-		int id=user.getUserId();
 		
+		user.setfName(fName);
+		user.setlName(lName);
+		user.setStreetAdress(streetAdr);
+		user.setCity(city);
+
 		InsertMoreInfoService infoService=new InsertMoreInfoService();
-		if(infoService.insertMoreInfo(id, fName, lName, streetAdr, city)) {
+		
+		if(infoService.insertMoreInfo(user)) {
 			request.getRequestDispatcher("home.jsp").forward(request, response);
 		}else {
-			request.getRequestDispatcher("/");
+			request.getRequestDispatcher("oneMoreStep.jsp").forward(request, response);
 		}
 		
 	}
