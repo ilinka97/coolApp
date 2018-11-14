@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.bildit.model.User;
 import org.bildit.service.LoginService;
+import org.bildit.service.RegistrationService;
 
 
 @WebServlet("/login")
@@ -31,8 +32,10 @@ public class LoginController extends HttpServlet {
 		LoginService loginService=new LoginService();
 		
 		if((user = loginService.login(user)) != null) {
+			RegistrationService registrationService=new RegistrationService();
+			User userSession=registrationService.getUserByEmailAndPassword(email, password);
 			HttpSession session=request.getSession();
-			session.setAttribute("user", user);
+			session.setAttribute("user", userSession);
 			request.getRequestDispatcher("home.jsp").forward(request, response);;	
 		}else {
             response.sendRedirect("/");
