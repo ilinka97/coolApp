@@ -1,6 +1,10 @@
 html{  
 	background-color: #CCCCCC;
 }
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
+}
 #loginForm{
 	margin:10px;
 	float:left;	

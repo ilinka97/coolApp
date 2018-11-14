@@ -10,17 +10,17 @@
 <body>
 
 <div id="nav">
- 	<a href="" role="button">Edit Information</a>
+ 	<a href="/editInfoRedirect" role="button">Edit Information</a>
  	<a href="" role="button">Delete profile</a>
  	<a href="" role="button">Logout</a>
 </div>
 
 <div id="content">
 
-	<h1>${user.getfName()} ${user.getlName()}</h1>
-	<h3>${user.getEmail()}</h3>
-	<h3>${user.getStreetAdress()}</h3>
-	<h3>${user.getCity()}</h3>
+	<h1>${user.getfName()}  ${user.getlName()}</h1>
+	<h3>Mail: ${user.getEmail()}</h3>
+	<h3>Adress: ${user.getStreetAdress()}</h3>
+	<h3>City: ${user.getCity()}</h3>
 	
 </div>
 

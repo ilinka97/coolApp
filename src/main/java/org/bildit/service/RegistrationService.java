@@ -27,4 +27,10 @@ public class RegistrationService {
             }
     }
 	
+	public User getUserByEmailAndPassword(String email, String password) {
+		
+		UserDAO userDao=new UserDAO();
+		return userDao.getUserByEmailAndPassword(email, password);
+		
+	}
 }

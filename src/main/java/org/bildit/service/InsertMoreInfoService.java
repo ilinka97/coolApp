@@ -12,8 +12,7 @@ public class InsertMoreInfoService {
 		userUpdate.setlName(user.getlName());
 		userUpdate.setStreetAdress(user.getStreetAdress());
 		userUpdate.setCity(user.getCity());
-		userUpdate.setEmail(user.getEmail());
-		userUpdate.setPassword(user.getPassword());
+		userUpdate.setUserId(user.getUserId());
 		
 		UserDAO userDAO=new UserDAO();
 		if(userDAO.updateUser(userUpdate)) {

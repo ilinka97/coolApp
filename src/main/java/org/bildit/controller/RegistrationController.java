@@ -31,7 +31,10 @@ public class RegistrationController extends HttpServlet {
     	user.setPassword(password);
     	
 		RegistrationService registrationService = new RegistrationService();
+		
 		if (registrationService.registerUser(email,password)) {
+			int userId=registrationService.getUserByEmailAndPassword(email, password).getUserId();
+			user.setUserId(userId);
 			HttpSession session=request.getSession();
 			session.setAttribute("user", user);
 			request.getRequestDispatcher("oneMoreStep.jsp").forward(request,response);
