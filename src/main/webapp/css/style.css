@@ -1,0 +1,34 @@
+html{  
+	background-color: #CCCCCC;
+}
+a, a:visited, a:hover, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+#loginForm{
+	margin:10px;
+	float:left;	
+	margin-right: 40px;
+}
+#registerForm{
+	padding:9px;
+	margin-top:5px;
+}
+#nav{
+	float:right;
+}
+#nav a{
+	padding:10px;
+	height:20px;
+	background:#999;
+	text-decoration:none;
+}
+#deleteProfile{
+	width: 200px;
+}
+#deleteButton{
+	float: right;
+}
+#cancelButton{
+	float: left;
+}
