@@ -12,9 +12,13 @@
 	<div id="deleteProfile">
 	<h1>Delete profile?</h1>
 	
-	<a href="" role="button">Edit Information</a>
- 	<a href="" role="button">Delete profile</a>
- 	<a href="" role="button">Logout</a>
+	<h3>${user.getfName()}  ${user.getlName()}</h3>
+	<h3>Mail: ${user.getEmail()}</h3>
+	<h3>Adress: ${user.getStreetAdress()}</h3>
+	<h3>City: ${user.getCity()}</h3>
+	
+	<a href="/home"><button id="cancelButton">Cancel</button></a>
+ 	<form><button type="submit" id="deleteButton" formmethod="get" formaction="/deleteProfile" name="deleteButton" value="${user.getUserId()}">Delete profile</button></form>
 	
  	</div>
  	

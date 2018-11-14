@@ -23,9 +23,12 @@ a, a:visited, a:hover, a:active {
 	background:#999;
 	text-decoration:none;
 }
-#deleteProfile a{
-	padding:10px;
-	height:20px;
-	background:#999;
-	text-decoration:none;
+#deleteProfile{
+	width: 200px;
+}
+#deleteButton{
+	float: right;
+}
+#cancelButton{
+	float: left;
 }

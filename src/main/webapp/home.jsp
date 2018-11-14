@@ -11,8 +11,8 @@
 
 <div id="nav">
  	<a href="/editInfoRedirect" role="button">Edit Information</a>
- 	<a href="" role="button">Delete profile</a>
- 	<a href="" role="button">Logout</a>
+ 	<a href="/deleteProfileRedirect" role="button">Delete profile</a>
+ 	<a href="/logout" role="button">Logout</a>
 </div>
 
 <div id="content">

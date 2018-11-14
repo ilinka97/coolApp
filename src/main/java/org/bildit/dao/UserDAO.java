@@ -137,4 +137,24 @@ public class UserDAO {
 		
 		return false;
 	}
+	
+	public boolean deleteUser(int userId) {
+		
+		String query="DELETE FROM user WHERE userid=?";
+		
+		try(PreparedStatement statement=connection.prepareStatement(query)){
+			
+			statement.setInt(1, userId);
+			
+			if (statement.executeUpdate()==1) {
+				return true;
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return false;
+	}
+	
 }
